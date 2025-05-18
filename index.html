@@ -1,190 +1,366 @@
-          
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edson Esmecelato | Avaliação Imobiliária</title>
   <style>
+    /* Reset and Basic Styles */
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8f8f8;
       color: #333;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
+    /* Header */
     header {
-      background-color: #003366;
+      background-color: #004080;
       color: white;
       padding: 20px;
       text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      /* Added shadow for depth */
     }
+
+    header h1 {
+      font-size: 2.2em;
+      /* Reduced size slightly for better balance */
+      margin-bottom: 5px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      /* Slightly larger and more readable */
+      opacity: 0.8;
+    }
+
+    /* Navigation */
     nav {
       background: #fff;
       display: flex;
-      justify-content: space-around;
-      padding: 10px;
-      border-bottom: 2px solid #003366;
-      flex-wrap: wrap;
+      justify-content: center;
+      /* Centered nav items */
+      padding: 15px 20px;
+      border-bottom: 2px solid #004080;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      /* Subtle shadow */
+      margin-bottom: 20px;
+      /* Spacing below nav */
     }
+
     nav a {
-      color: #003366;
+      color: #004080;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      /* Slightly bolder */
+      padding: 10px 15px;
+      margin: 0 10px;
+      border-radius: 5px;
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
     }
+
+    nav a:hover {
+      background-color: #e0eaff;
+      color: #002040;
+    }
+
+    /* Hero Section */
     .hero {
       display: flex;
-      min-height: 754px;
-      flex-direction: row;
+      flex-direction: column;
+      /* Stack content vertically */
       align-items: center;
+      text-align: center;
+      /* Center align text */
       justify-content: center;
-      padding: 40px;
-      background: linear-gradient(90deg, #003366, #0077cc);
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #004080, #0080ff);
       color: white;
+      border-radius: 8px;
+      /* Rounded corners */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      /* Stronger shadow */
+      margin-bottom: 30px;
+      /* Spacing below hero */
     }
+
     .hero-content {
-      max-width: 600px;
+      max-width: 800px;
+      /* Wider content area */
     }
+
     .hero h1 {
-      font-size: 2.5rem;
+      font-size: 2.4em;
+      /* Slightly smaller, more refined */
+      margin-bottom: 15px;
     }
+
     .hero p {
-      font-size: 1.2rem;
+      font-size: 1.15em;
+      /* Improved readability */
+      opacity: 0.9;
+      margin-bottom: 25px;
     }
+
     .hero a {
-      background: white;
-      color: #003366;
-      padding: 10px 20px;
-      border-radius: 5px;
+      background: #fff;
+      color: #004080;
+      padding: 12px 25px;
+      border-radius: 6px;
       margin-top: 20px;
       display: inline-block;
-      font-weight: bold;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
     }
+
+    .hero a:hover {
+      background-color: #e0eaff;
+    }
+
+    /* Sections (Sobre, Serviços, Diferenciais, Contato) */
     .section {
-      padding: 40px 20px;
-      max-width: 960px;
-      margin: auto;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto 30px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+      /* Softer shadow */
     }
+
     .section h2 {
-      color: #003366;
+      color: #004080;
+      font-size: 2em;
+      margin-bottom: 25px;
+      text-align: center;
+      position: relative;
+      padding-bottom: 10px;
     }
-    form input, form textarea {
+
+    .section h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      height: 3px;
+      width: 50px;
+      background-color: #0080ff;
+    }
+
+    .section p {
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    .section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .section ul li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      /* Light divider */
+      font-size: 1.1em;
+      color: #444;
+    }
+
+    .section ul li:last-child {
+      border-bottom: none;
+    }
+
+    /* Contact Form */
+    form {
+      display: grid;
+      gap: 15px;
+    }
+
+    form input,
+    form textarea {
       width: 100%;
-      padding: 10px;
-      margin: 10px 0;
+      padding: 12px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      font-size: 1em;
+      font-family: inherit;
+      /* Inherit font */
     }
+
+    form textarea {
+      resize: vertical;
+    }
+
     form button {
-      padding: 10px 20px;
-      background: #0077cc;
+      padding: 12px 25px;
+      background: #0080ff;
       border: none;
       color: white;
-      font-weight: bold;
+      font-weight: 600;
       border-radius: 5px;
       cursor: pointer;
+      transition: background-color 0.2s ease;
     }
+
+    form button:hover {
+      background-color: #0060c0;
+    }
+
+    /* Footer */
     footer {
-      background-color: #222;
+      background-color: #333;
       color: #fff;
-      padding: 20px;
+      padding: 30px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 20px;
+      gap: 30px;
       flex-wrap: wrap;
+      text-align: center;
+      /* Center text in footer */
     }
+
     footer img {
-      width: 200px;
+      width: 150px;
+      /* Smaller image */
       height: auto;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.3);
+      border-radius: 50%;
+      /* Circular image */
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+      /* Stronger shadow */
+      margin-bottom: 15px;
+      /* Spacing below image */
     }
+
     footer div {
-      font-size: 16px;
-      line-height: 1.6;
+      font-size: 0.9em;
+      /* Smaller font */
+      line-height: 1.5;
       max-width: 400px;
+      opacity: 0.8;
+    }
+
+    footer p strong {
+      color: #fff;
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 5px 0;
+      }
+
+      .hero {
+        padding: 40px 15px;
+      }
+
+      .hero h1 {
+        font-size: 2em;
+      }
+
+      .section {
+        padding: 40px 15px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<header>
-  <h1>Edson Esmecelato</h1>
-  <p>Perito Judicial habilitado no Tribunal de Justiça do Paraná - TJPR</p>
-  <p>Corretor de Imóveis | CRECI 44.628 PR</p>
-  <p>Avaliador de Imóveis | CNAI 47.536 DF</p>
-</header>
-
-<nav>
-  <a href="#sobre">Sobre</a>
-  <a href="#servicos">Serviços</a>
-  <a href="#diferenciais">Diferenciais</a>
-  <a href="#contato">Contato</a>
-</nav>
-
-<section class="hero">
-  <div class="hero-content">
-    <h1>Laudo Judicial Técnico de Avaliação Imobiliária.</h1>
-    <p>Atendimento a Processos judiciais, Extrajudiciais, Inventários e Avaliações Mercadológicas.</p>
-    <p>Atendimento como Assistente Judicial em Processos Forenses, auxiliando Advogado e/ou Promotor de Justiça.</p>
-    <h1>Laudo para Seguro Patrimonial.</h1>
-    <h1>Laudo Cautelar Vizinho.</h1>
-    <h1>Vistoria de Locação ou Entrega de Imóvel.</h1>
-    <a href="#contato">Solicite seu Laudo</a>
-  </div>
-</section>
-
-<section class="section" id="sobre">
-  <h2>Sobre Edson Esmecelato</h2>
-  <p>Com formação técnica e experiência sólida no mercado imobiliário, ofereço Laudos ou Pareceres com responsabilidade técnica e legalidade, conforme as normas da ABNT (NBR 14653).</p>
-</section>
-
-<section class="section" id="servicos">
-  <h2>Serviços</h2>
-  <ul>
-    <li>Laudo de Avaliação Judicial</li>
-    <li>Parecer Técnico de Avaliação Mercadológica (PTAM)</li>
-    <li>Avaliações Mercadológicas Rurais e Urbanas</li>
-    <li>Perícias em Ações Judiciais</li>
-    <li>Assistente Judicial de Advogados e/ou Promotor de Justiça</li>
-    <li>Laudo para Seguro Patrimonial</li>
-    <li>Laudo Cautelar Vizinho</li>
-    <li>Vistoria de Locação ou Entrega de Imóvel</li>
-  </ul>
-</section>
-
-<section class="section" id="diferenciais">
-  <h2>Diferenciais</h2>
-  <ul>
-    <li>Responsabilidade técnica e ética</li>
-    <li>Laudos fundamentados e reconhecidos</li>
-    <li>Atendimento personalizado</li>
-    <li>Perito Nomeado pela Justiça do Paraná</li>
-  </ul>
-</section>
-
-<section class="section" id="contato">
-  <h2>Solicite um Orçamento</h2>
-  <form>
-    <input type="text" placeholder="Seu nome completo" required />
-    <input type="email" placeholder="Seu e-mail" required />
-    <input type="tel" placeholder="Telefone ou WhatsApp" />
-    <textarea rows="5" placeholder="Descreva seu imóvel ou solicitação..."></textarea>
-    <button type="submit">Enviar Solicitação</button>
-  </form>
-</section>
-
-<footer>
-  <img src="imagens/edson.jpg" alt="Edson Viana Esmecelato" />
-  <div>
-    <p><strong>Edson Viana Esmecelato</strong></p>
-    <p>Perito Judicial habilitado no Tribunal de Justiça do Paraná</p>
+  <header>
+    <h1>Edson Esmecelato</h1>
+    <p>Perito Judicial habilitado no Tribunal de Justiça do Paraná - TJPR</p>
     <p>Corretor de Imóveis | CRECI 44.628 PR</p>
     <p>Avaliador de Imóveis | CNAI 47.536 DF</p>
-    <p>Rua Francisco Rodrigues de Souza, 148 – Terra Roxa – PR</p>
-    <p>(44) 99906-1434 | esmecelatocorretor@gmail.com</p>
-  </div>
-</footer>
+  </header>
+
+  <nav>
+    <a href="#sobre">Sobre</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#diferenciais">Diferenciais</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Laudo Judicial Técnico de Avaliação Imobiliária</h1>
+      <p>Atendimento a Processos judiciais, Extrajudiciais, Inventários e Avaliações Mercadológicas.</p>
+      <p>Atendimento como Assistente Judicial em Processos Forenses, auxiliando Advogado e/ou Promotor de Justiça.</p>
+      <p>Laudo para Seguro Patrimonial</p>
+      <p>Laudo Cautelar Vizinho</p>
+      <p>Vistoria de Locação ou Entrega de Imóvel</p>
+      <a href="#contato">Solicite seu Laudo</a>
+    </div>
+  </section>
+
+  <section class="section" id="sobre">
+    <h2>Sobre Edson Esmecelato</h2>
+    <p>Com formação técnica e experiência sólida no mercado imobiliário, ofereço Laudos ou Pareceres com
+      responsabilidade técnica e legalidade, conforme as normas da ABNT (NBR 14653).</p>
+  </section>
+
+  <section class="section" id="servicos">
+    <h2>Serviços</h2>
+    <ul>
+      <li>Laudo de Avaliação Judicial</li>
+      <li>Parecer Técnico de Avaliação Mercadológica (PTAM)</li>
+      <li>Avaliações Mercadológicas Rurais e Urbanas</li>
+      <li>Perícias em Ações Judiciais</li>
+      <li>Assistente Judicial de Advogados e/ou Promotor de Justiça</li>
+      <li>Laudo para Seguro Patrimonial</li>
+      <li>Laudo Cautelar Vizinho</li>
+      <li>Vistoria de Locação ou Entrega de Imóvel</li>
+    </ul>
+  </section>
+
+  <section class="section" id="diferenciais">
+    <h2>Diferenciais</h2>
+    <ul>
+      <li>Responsabilidade técnica e ética</li>
+      <li>Laudos fundamentados e reconhecidos</li>
+      <li>Atendimento personalizado</li>
+      <li>Perito Nomeado pela Justiça do Paraná</li>
+    </ul>
+  </section>
+
+  <section class="section" id="contato">
+    <h2>Solicite um Orçamento</h2>
+    <form>
+      <input type="text" placeholder="Seu nome completo" required />
+      <input type="email" placeholder="Seu e-mail" required />
+      <input type="tel" placeholder="Telefone ou WhatsApp" />
+      <textarea rows="5" placeholder="Descreva seu imóvel ou solicitação..."></textarea>
+      <button type="submit">Enviar Solicitação</button>
+    </form>
+  </section>
+
+  <footer>
+    <img src="imagens/edson.jpg" alt="Edson Viana Esmecelato" />
+    <div>
+      <p><strong>Edson Viana Esmecelato</strong></p>
+      <p>Perito Judicial habilitado no Tribunal de Justiça do Paraná</p>
+      <p>Corretor de Imóveis | CRECI 44.628 PR</p>
+      <p>Avaliador de Imóveis | CNAI 47.536 DF</p>
+      <p>Rua Francisco Rodrigues de Souza, 148 – Terra Roxa – PR</p>
+      <p>(44) 99906-1434 | esmecelatocorretor@gmail.com</p>
+    </div>
+  </footer>
 
 </body>
+
 </html>
-
-
